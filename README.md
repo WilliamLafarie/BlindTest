@@ -15,7 +15,7 @@ touch .env
 Add those environment variables:
 
 ```
-# JWT Secret
+# Port
 PORT = <THE_PORT_YOU_WANT>
 ```
 
