@@ -6,6 +6,7 @@
     const express = require('express');
     const ejs = require('ejs');
     const path = require('path');
+    const bodyParser = require('body-parser');
 
     //Inner
     const mainRouter = require('./routes/main.routes.js');
@@ -19,17 +20,20 @@
 
     class ServerClass { 
         init(){
-            // Config du dossier client
+            // Client's folder config
             server.set( 'views', __dirname + '/www' );
             server.use( express.static(path.join(__dirname, 'www')) );
 
-            // Config du moteur de rendu
+            // View engine config
             server.set( 'view engine', 'ejs' );
 
-            // Configurer les routes
+            // Body-parser
+            server.use(bodyParser.urlencoded({ extended: false }))
+
+            // Routes config
             server.use('/', mainRouter);
 
-            // Lancer le serveur
+            // Launch the server
             this.launch();
             console.log('help');
         }
