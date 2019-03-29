@@ -17,6 +17,7 @@ Add those environment variables:
 ```
 # JWT Secret
 PORT = <THE_PORT_YOU_WANT>
+```
 
-You can now `npm start`
+To start the project `npm start`
 
