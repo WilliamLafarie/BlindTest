@@ -1,0 +1,117 @@
+body {
+    background-color: #FFE53B;
+    background-image: linear-gradient(to right top, #00da74, #00c287, #00a88e, #008e8b, #00747c); 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    max-width: 80rem;
+    background-color: white;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 3rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    font-family: 'Nunito';
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.info h2 { 
+    font-weight: 600;
+}
+
+.info p { 
+    text-align: justify;
+    font-weight: 200;
+    line-height: 2.5rem;
+    padding: 2rem;
+}
+
+.info a {
+    background-image: linear-gradient(to right top, #00da74, #00c287, #00a88e, #008e8b, #00747c);
+    color:white;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-radius: 3rem;
+    transition:ease-in-out 0.25s;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    -webkit-transition:ease-in-out 0.25s;
+    -moz-transition:ease-in-out 0.25s;
+    -ms-transition:ease-in-out 0.25s;
+    -o-transition:ease-in-out 0.25s;
+}
+
+.info a:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+.team { 
+    display: flex;
+    justify-content: space-around;
+}
+  
+
+.team section { 
+    width: 20rem;
+    background-color: white;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 3rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    font-family: 'Nunito';  
+    font-size: 2rem;
+}
+
+.team section ul { 
+    text-align: center;
+}
+
+.team section ol { 
+    text-align: center;
+    padding-top: 2rem; 
+}
+
+.team section ul>li:nth-child(2) { 
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to right top, #00da74, #00c287, #00a88e, #008e8b, #00747c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.team section ol li { 
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.team section ul i {
+    color:#404040;
+}
+
+.team section ul i:hover { 
+    background-image: linear-gradient(to right top, #00da74, #00c287, #00a88e, #008e8b, #00747c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
