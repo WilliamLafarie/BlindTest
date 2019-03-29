@@ -15,7 +15,7 @@ touch .env
 Add those environment variables:
 
 ```
-# Port
+# Porte
 PORT = <THE_PORT_YOU_WANT>
 ```
 
