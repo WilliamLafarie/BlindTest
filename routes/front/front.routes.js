@@ -21,7 +21,11 @@ class FrontRouterClass {
     routes(){
         frontRouter.get('/', (req, res) => {
             res.render('index', { connected: false});
-        });     
+        });   
+
+        frontRouter.get('/deezer', (req, res) => {
+            res.render('deezer', { connected: false});
+        });      
     }
 }
     

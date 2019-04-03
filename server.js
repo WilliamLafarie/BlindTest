@@ -6,8 +6,11 @@
     const express = require('express');
     const ejs = require('ejs');
     const path = require('path');
-    const bodyParser = require('body-parser');
+    const bodyParser = require('body-parser');    
+    const {Deezer} = require('./services/deezer.js');
+    const apiDeezer = new Deezer();
 
+    
     //Inner
     const mainRouter = require('./routes/main.routes.js');
 //
@@ -35,12 +38,15 @@
 
             // Launch the server
             this.launch();
-            console.log('help');
+
         }
 
         launch(){
             server.listen(port, () => {
                 console.log(`Server is active on port ${port}`);
+            });
+            apiDeezer.getTrack(424972412).then(function(result) {
+                console.log(result);
             });
         }
 
