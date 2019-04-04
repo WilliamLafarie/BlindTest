@@ -1,6 +1,6 @@
 # BlindTest
 
-[Work in progress] [ █................. ]2% 
+[Work in progress] [ █................. ]3% 
 
 # Configuration
 To start this project, clone the repo follow those steps:
