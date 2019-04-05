@@ -1,5 +1,10 @@
 const levenshtein = require('js-levenshtein');
 document.addEventListener("DOMContentLoaded", function(event) {
+
+    let stringNormalize = (string)=>{
+        return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,'');
+    }
+
     track = document.querySelectorAll('h2')[0].textContent;
     artist = document.querySelectorAll('h2')[1].textContent;
 
@@ -8,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(track);
     console.log(artist);
 
+    rep = [track+artist,artist+track,track,artist];
+    console.log(rep);
 
     button = document.querySelector('.valider');
     button.addEventListener('click', ()=>{
@@ -32,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     }
 
-    let stringNormalize = (string)=>{
-        return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,'');
-    }
+   
 
-    
+
 
   });
