@@ -8,7 +8,8 @@
     const path = require('path');
     const bodyParser = require('body-parser');    
     const {Deezer} = require('./services/deezer.js');
-    const apiDeezer = new Deezer();
+    const http = require('http');
+    const socketIo = require('socket.io');
 
     
     //Inner
@@ -19,6 +20,8 @@
     -- Configuration --
 */
     const server = express();
+    const expressServer = http.createServer(server);
+    const io = socketIo(expressServer);
     const port = process.env.PORT;
 
     class ServerClass { 
@@ -36,17 +39,22 @@
             // Routes config
             server.use('/', mainRouter);
 
+             // Setup Socket.io
+            io.on('connection', (socket) => {
+                console.log('a user connected');
+                socket.on('disconnect', () => { 
+                    console.log('user disconnected')
+                })
+              });
+
             // Launch the server
             this.launch();
 
         }
 
         launch(){
-            server.listen(port, () => {
+            expressServer.listen(port, () => {
                 console.log(`Server is active on port ${port}`);
-            });
-            apiDeezer.getTrack(424972412).then(function(result) {
-                console.log(result);
             });
         }
 
