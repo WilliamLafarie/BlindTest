@@ -7,7 +7,6 @@
     const ejs = require('ejs');
     const path = require('path');
     const bodyParser = require('body-parser');    
-    const {Deezer} = require('./services/deezer.js');
     const http = require('http');
     const socketIo = require('socket.io');
 
@@ -32,7 +31,7 @@
 
             // View engine config
             server.set( 'view engine', 'ejs' );
-
+            
             // Body-parser
             server.use(bodyParser.urlencoded({ extended: false }))
 
