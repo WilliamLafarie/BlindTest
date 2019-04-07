@@ -121,8 +121,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(track);
     console.log(artist);
 
-    rep = [track+artist,artist+track,track,artist];
-    console.log(rep);
 
     button = document.querySelector('.valider');
     button.addEventListener('click', ()=>{
@@ -135,15 +133,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
             answerIsOk(track,answer,'track')
             answerIsOk(artist,answer, 'artist')
+            answerIsOk(artist+track,answer, 'trackArtist')
+            answerIsOk(track+artist,answer, 'trackArtist')
+            
         }
     })
     
     let answerIsOk = (param1, answer,type)=>{
         if(levenshtein(param1,answer)<=3){
+           if(type != "trackArtist"){
             console.log(type + ' is ok');
-        console.log(levenshtein(param1,answer))
-        document.querySelector('#'+type).style.opacity = "1";
-        document.querySelector('#'+type).style.color = "green";
+            console.log(levenshtein(param1,answer))
+            document.querySelector('#'+type).style.opacity = "1";
+            document.querySelector('#'+type).style.color = "green";
+           }
+           else{
+            console.log(type + ' is ok');
+            console.log(levenshtein(param1,answer))
+           }
     }
     }
 
